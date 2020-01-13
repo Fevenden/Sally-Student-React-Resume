@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Sally Student Resume</title>
 </head>
 <body>
-  <div class="application-root"></div>
-  <script src="index.js"></script>
+  <div id="application-root"></div>
 </body>
 <script
   src="https://unpkg.com/react@16/umd/react.development.js">
@@ -18,5 +18,56 @@
 </script>
 <script
   src="https://unpkg.com/babel-standalone@6/babel.min.js">
+</script>
+<script type="text/babel">
+  const appRoot = document.querySelector('#application-root');
+
+  function Header(props) {
+    return (
+      <header>
+        <h1>{props.name} Resume</h1>
+      </header>
+    );
+  }
+
+  function App(props) {
+    return (
+      <div className="container">
+        <Header name={props.name} />
+
+        <main>
+          <address>
+            <ul className="contactInfo">
+              <li>Phone:123-123-4567</li>
+              <li>Email:<a href="mailto:sallystudent@email.com?subject=Sally%20Student%20Resume">sallystudent@email.com</a></li>
+            </ul>
+            <img src="Sally Student.jpg" alt="A picture of Sally" width="350"/>
+          </address>
+          <section>
+            <h2>Education</h2>
+            <ul className="education">
+              <li>Thinkful Software Engineer-Flex Graduate</li>
+              <li>Bachelor of Computer Science at Washington University</li>
+              <li>Graduated from Palmer High School</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Work History</h2>
+            <ul className="workHistory">
+              <li><strong>Junior Software Engineer for Techy Tech Tech</strong><i> Jan, 2019 - Current</i>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quam ipsum, gravida nec ornare egestas, rhoncus at nulla. Praesent sit amet augue hendrerit, consectetur nunc a, cursus leo. Nulla ac turpis vitae tellus molestie efficitur. In semper gravida libero, sed aliquam nulla gravida ac. Suspendisse mattis magna massa, sed tincidunt orci laoreet et. Aliquam pretium non orci et pulvinar. Curabitur aliquet purus ut risus vestibulum pretium. Sed laoreet mauris lacus, in laoreet nunc mollis et.</li>
+              <li><strong>Frontend Web Developer at Weby Webs</strong><i> Jan 2017 - Jan, 2018</i>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quam ipsum, gravida nec ornare egestas, rhoncus at nulla. Praesent sit amet augue hendrerit, consectetur nunc a, cursus leo. Nulla ac turpis vitae tellus molestie efficitur. In semper gravida libero, sed aliquam nulla gravida ac. Suspendisse mattis magna massa, sed tincidunt orci laoreet et. Aliquam pretium non orci et pulvinar. Curabitur aliquet purus ut risus vestibulum pretium. Sed laoreet mauris lacus, in laoreet nunc mollis et.</li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    )
+  }
+  App.defaultProps = {
+    name: 'Sally Student'
+  }
+  ReactDOM.render( <App />, appRoot)
 </script>
 </html>

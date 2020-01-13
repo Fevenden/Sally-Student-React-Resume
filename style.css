@@ -1,3 +1,13 @@
 * {
     box-sizing: border-box;
 }
+
+header, address, section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
